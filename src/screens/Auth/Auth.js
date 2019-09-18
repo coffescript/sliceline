@@ -26,24 +26,15 @@ const instructions = Platform.select({
 export class Auth extends Component {
   render () {
     return (
+      <React.Fragment>
         <View style={styles.container}>
           <Image source={require('../../assets/images/logo/logoslicesline.png')} style={styles.logo} />
-        
-        <Button
-          style={styles.connectFacebook}
-          status='primary'
-          size='medium'
-        >
-        Continue with Facebook
-        </Button>
-
-        <View style={styles.hrLeft} />
-        {/*<Text style={styles.or} >OR</Text>*/}
-
-        <View style={styles.username}>
-          <Login />
         </View>
-      </View>
+        <View style={styles.login}>
+          <Login />
+        </View> 
+      </React.Fragment>
+     
     )
   }
 }
@@ -52,29 +43,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    flexDirection: 'column',
     backgroundColor: 'rgba(255,255,255,1)'
   },
   logo: {
-    bottom: 120,
+    top: 40,
     width: 355, 
-    height: 300,
-
+    height: 300
   },
-  connectFacebook: {
-    flexDirection: 'column',
-    bottom: 180,
-    width: 300,
-    left: 28,
-  },
-  hrLeft: {
-    borderBottomColor: 'grey',
-    borderBottomWidth: 1,
-    bottom: 160,
-    width: 315,
-    left: 20
-  },
-  or: {
-    
+  login: {
+    flex: 2
   }
 })
   
